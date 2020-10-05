@@ -10,7 +10,7 @@ namespace dictionary_of_cities
     {
         static void Main(string[] args)
         {
-            Dictionary<string, string> dict = new Dictionary<int, string>();
+            Dictionary<string, string> dict = new Dictionary<string, string>();
             dict.Add("one", "banglore");
             dict.Add("two", "mumbai");
             dict.Add("three", "pune");
