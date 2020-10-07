@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace multicastdel
+{
+    public delegate int MyDelegate();
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyDelegate del1 = ClassA.MethodA;
+            MyDelegate del2 = ClassB.MethodB;
+
+            MyDelegate del = del1 + del2;
+            Console.WriteLine(del());
+            Console.ReadKey();
+        }
+    }
+    class ClassA
+    {
+        public static int MethodA()
+        {
+            return 100;
+        }
+    }
+
+    class ClassB
+    {
+        public static int MethodB()
+        {
+            return 200;
+        }
+    }
+   
+}
