@@ -38,25 +38,27 @@ namespace linq_assignment
             var youngestemployee= from e in emplist where (e.salary > 12000 && e.salary < 25000 ) select new { Employeename = e.employeename};
           youngestemployee.ToList().ForEach(e => Console.WriteLine(e.Employeename));//stored information converted to list
             Console.WriteLine();
+            //group by execution
             var employeegroupbybatch = from e in emplist
                                        group e by e.employeeID into sb
                                        orderby sb.Key
                                        select new { sb.Key, sb };
             Console.WriteLine();
-            //Left Outer Join
-            var employeetype = from e in emplist
-                               join et in emplist
-                               on e.employeeID equals et.employeeID
-                               into et
-                               select new
-                               {
-                                   employeeName = e.employeename,
-                                   Employee = et
-                               };
+            Console.WriteLine("group by query");
+            var searchbyid = from e in emplist
+                                        where e.employeeID==1 //first query
+                                        where e.salary == 25000//second query
+                                        where e.designation == "project manager"//third query
+                                        group e by e.employeeID into sb
+                                        orderby sb.Key
+                                        select new { sb.Key, sb };
 
-            employeetype.ToList().ForEach(e => Console.WriteLine(e.employeeName));
-
-
+            foreach (var w in searchbyid)
+            {
+                Console.WriteLine(w.Key);
+            }
+            Console.WriteLine();
+          
 
             //sorting
             var sortingofemployee = from e in emplist
