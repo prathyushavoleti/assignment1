@@ -29,11 +29,27 @@ namespace anonymous_methodwin
                                  //b.Click += new EventHandler(button1_Click1);
             b.Click += delegate (object sender1, EventArgs e1)
              {
-                 MessageBox.Show("today is thursday");
+                 MessageBox.Show("Hello World");
              };
-            b.Click += delegate (object sender1, EventArgs e1)
+            b.Click += delegate (object sender2, EventArgs e2)
             {
-                MessageBox.Show("hello everyone");
+                MessageBox.Show("Programming is Fun");
+            };
+            b.Click += delegate (object sender3, EventArgs e3)
+            {
+                MessageBox.Show("This is printing");
+            };
+            b.Click += delegate (object sender4, EventArgs e4)
+            {
+                MessageBox.Show("this is printing again");
+            };
+            b.Click += delegate (object sender5, EventArgs e5)
+            {
+                MessageBox.Show("Yeyy! this is crazy");
+            };
+            b.Click += delegate (object sender6, EventArgs e6)
+            {
+                MessageBox.Show("Yeyy! this is printing crazy");
             };
 
             //method creation
