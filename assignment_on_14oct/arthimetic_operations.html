@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>java script examples</title>
+    
+</head>
+<body>
+    <script type="text/javascript">
+        function add() {
+            fst = parseInt(Arthimetic_operations.fst.value);
+            snd = parseInt(Arthimetic_operations.snd.value);
+            result = fst + snd;
+            window.alert("the result after addition is  " + result);
+            Arthimetic_operations.result.value = result;
+        }
+        function sub() {
+            fst = parseInt(Arthimetic_operations.fst.value);
+            snd = parseInt(Arthimetic_operations.snd.value);
+            result = fst - snd;
+            window.alert("the result after subtraction is  " + result);
+            Arthimetic_operations.result.value = result;
+        }
+        function Mul() {
+            fst = parseInt(Arthimetic_operations.fst.value);
+            snd = parseInt(Arthimetic_operations.snd.value);
+            result = fst * snd;
+            window.alert("the result after multiplication is  " + result);
+            Arthimetic_operations.result.value = result;
+        }
+        function Div() {
+            fst = parseInt(Arthimetic_operations.fst.value);
+            snd = parseInt(Arthimetic_operations.snd.value);
+            result = fst / snd;
+            window.alert("the result after division is  " + result);
+            Arthimetic_operations.result.value = result;
+            
+        }
+        
+    </script>
+   
+    <form action="" name="Arthimetic_operations">
+        <input type="text" name="fst" /><br /><br />
+        <input type="text" name="snd" /><br /><br />
+        <input type="button" value="ADD" onclick="add()" />
+        <input type="button" value="SUBTRACTION" onclick="sub()"/>
+        <input type="button" value="MULTIPLICATION" onclick="Mul()"/>
+        <input type="button" value="DIVISION" onclick="Div()" /><br /><br />
+        <input type="text" name="result" />
+
+        
+    </form>
+</body>
+</html>

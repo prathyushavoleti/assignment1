@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>java script examples</title>
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
+</head>
+<body id="body1">
+    <script type="text/javascript">
+        function f1() {
+            window.alert("hi you have clicked the button");
+                            }
+        function changecontent() {
+            document.getElementById('hid').innerHTML = "hi my name is firdos";
+        }
+        function changeimagesize() {
+            document.getElementById('immg1').width = '350';
+            document.getElementById('immg1').height = '350';
+        }
+        function changethebackground() {
+            document.getElementById('body1').style.backgroundColor = 'aqua';
+        }
+        function hide() {
+            document.getElementById('hid').style.display = 'none';
+        }
+    </script>
+    <h1 id="hid">my name is prathyusha</h1>
+    <h2 id="hid2">welcome to java script</h2>
+    <img src="https://th.bing.com/th/id/OIP.cT9Nc8R58Tx_dH2fy4kJtQHaLw?w=172&h=273&c=7&o=5&pid=1.7" width="500" height="500" id="immg1" />
+    <button onclick="f1()">click me</button>
+    <button onclick="changecontent()">click me to change h1 content</button>
+    <button onclick="changeimagesize()">click me to change the image size</button>
+    <button onclick="changethebackground()">click me to change the background</button>
+    <button onclick="hide()">click me to hide the content</button>
+</body>
+</html>                

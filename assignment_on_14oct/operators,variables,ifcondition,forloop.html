@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        //variables
+        var age = 21;
+        var name = "prathyusha";
+        var salary = 30000;
+        //to observe the output
+        document.write("your age is " + age);
+        window.alert("your name " + name);
+        console.log("your salary" + salary);
+        //similar datatypes are added and concated with the other datatype
+        var a = 1;
+        var b = 2;
+        var c = "hello";
+        var d = a + b + c;
+        document.write(d);
+        //if condition
+        var age = 20;
+        if (age > 18) {
+            alert("u can vote");
+
+        }
+        else {
+            alert("u cannot vote");
+        }
+        //increment and decrement operators
+        var a = 1;
+        document.write("value of a" + a);
+        b = ++a + a++ + ++a + a++;
+        c = a-- + ++a - a++ + ++a - a--;
+
+        document.write("value of b" + b);
+        //addition of 2 numbers
+        var a = 3;
+        var b = 4;
+        c = a + b;
+        document.write("value of c" + c);
+        //multiplication of 2 numbers
+        var a = 3;
+        var b = 4;
+        c = a * b;
+        document.write("value of c" + c);
+        //comparision of inputs and returns true value
+        var a = 5;
+        var b = "5";
+        document.write(a == b);//only checks data
+        document.write(a === b);//checks the data along with type
+        function getName() {
+            var name = document.calculate.t1.value;
+            alert("your name is " + name);
+        }
+        //result along with the typeof the variable
+        var a = 10;
+        var name = "sachin";
+        var salary = 3000.67;
+        var age = "32";
+        document.write(a + " " + typeof (a) + " </br>");
+        document.write(name + " " + typeof (name) + "<br>");
+        document.write(salary + " " + typeof (salary) + "<br>");
+        document.write(age + " " + typeof (age) + "<br>");
+        var age1 = Number(age);//conversion of string to number
+        document.write(age1 + " " + typeof (age1) + "<br>");
+        //forloop
+        for (var i = 1; i <= 10; i++) {
+            document.write(i + "<br>");
+        }
+    </script>
+    /<!--value insertion-->
+    <form action="" name="calculate" onsubmit="getName()">
+        <input type="text" name="t1" value="ramya" /><br />
+        <input type="submit" value="submit" />
+    </form>
+    
+</body>
+</html>
