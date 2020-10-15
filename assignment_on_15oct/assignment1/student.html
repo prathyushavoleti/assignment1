@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>student score</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var score = [78, 55, 68, 99, 87];
+        for (var i = 0; i < score.length; i++) {
+            document.write(score[i]+"<br>");
+        }
+        var least = score[0];
+        for (var i = 1; i < score.length; i++)
+        {
+            if (least > score[i])
+            {
+                least = score[i];
+                document.write("least score is " + least);
+            }
+        }
+        document.write("<br>");
+        var highest = score[0];
+        for (var i = 1; i < score.length; i++) {
+            if (highest < score[i]) {
+                highest = score[i];
+                document.write("highest score is " + highest);
+            }
+        }
+        document.write("<br>");
+        var sum = 0;
+        for (i = 0; i < score.length; i++) {
+            sum = sum + score[i];
+            
+           
+        }
+        document.write("the sum of the elements in an array are " + sum + "<br>");
+
+        var avg = sum / score.length;
+        document.write("the average of the elements in an array are " + avg + "<br>");
+
+    </script>
+</body>
+</html>

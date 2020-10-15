@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        product = { id: 231, name: "TV", brand: "Samsung" };
+        document.write(product.id + "<br>");
+        document.write(product.name + "<br>");
+        document.write(product.brand + "<br>");
+
+
+        document.write("================" + "<br>");
+
+        var car = new Object();
+       car.model = 2018;
+        car.brand = "swift";
+        car.engine_no = 123343;
+        document.write(car.model + "<br>");
+        document.write(car.brand + "<br>");
+        document.write(car.engine_no + "<br>");
+        document.write("================" + "<br>");
+
+        function student(id, name, branch, college) {
+            this.id = id;
+            this.name = name;
+            this.branch = branch;
+            this.college = college;
+        }
+            var student = new student(1, "prathyusha", "ECE", "vignan");
+            document.write(student.id + "<br>");
+            document.write(student.name + "<br>");
+            document.write(student.branch + "<br>");
+            document.write(student.college + "<br>");
+        
+
+    </script>
+</body>
+</html>

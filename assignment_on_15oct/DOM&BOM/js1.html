@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>js1</title>
+</head>
+<body>
+    <h1>this is h1</h1>
+    <h1>this is h1</h1>
+    <h1>this is h1</h1>
+    <h2 class="x1">this is h2</h2>
+    <h2 class="x1">this is h2</h2>
+    <h2 class="x1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <h2 class="t1">this is h2</h2>
+    <button onclick="tagname()">click me</button>
+    <button onclick="clsname()">click me</button>
+    <button onclick="f3()">click me</button>
+    <button onclick="f4()">click me</button>
+    <script>
+        //function tagname() {
+        //    for (var i = 0; i <= 3;i++)
+        //  var x = document.getElementsByTagName('h1')[i].innerHTML = "hi";
+
+        //}
+        function tagname() {
+            alert("hi");
+            var i = document.getElementsByTagName('h1')[0].innerHTML = "hi";
+
+        }
+        function clsname() {
+            alert("hey");
+            var x = document.getElementsByClassName('x1').length;
+            document.write("length is " + x);
+        }
+        function f3() {
+            alert("hey buddy");
+            var y = document.getElementsByClassName('t1').length;
+            document.write("length is " + y);
+        }
+        function f4() {
+            alert("hi lets change the background colour");
+            var f = document.getElementsByClassName('x1');
+            f[0].style.backgroundColor = "red";
+            f[1].style.backgroundColor = "pink";
+            f[3].style.backgroundColor = "yellow";
+
+        }
+
+    </script>
+
+</body>
+</html>

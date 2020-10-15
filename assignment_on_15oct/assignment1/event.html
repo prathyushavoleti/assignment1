@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myclick() {
+            alert("hello you have clicked");
+        }
+        function mydoubleclick() {
+            alert("hello you have double clicked");
+        }
+        function mymouseover() {
+            alert("hello you have mouse over");
+        }
+        function mymouseout() {
+            alert("hello you have mouse out");
+        }
+        function keypress() {
+            alert("key pressed");
+        }
+    </script>
+    <button onclick="myclick()">click</button>
+    <button ondblclick="mydoubleclick()">doubleclick</button>
+    <button onmouseover="mymouseover()">mouse over</button>
+    <button onmouseout="mymouseout()">mouse out</button>
+    <input type="text" name="u" onkeypress="keypress()" />
+</body>
+</html>
