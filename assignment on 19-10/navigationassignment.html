@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Navigation assignment</title>
+</head>
+<body>
+    <h1 id="id01">My First Page</h1>
+    <p id="id02"></p>
+    <h1 id="id03">hello world</h1>
+    <p id="id04"></p>
+    <h1 id="id05">My First Page</h1>
+    <p id="id06"></p>
+    <p>Hello World!</p>
+
+    <div>
+        <p>The DOM is very useful!</p>
+        <p>This example demonstrates the <b>document.documentElement</b> property.</p>
+    </div>
+    
+    <div>
+        
+        <p>This example demonstrates the <b>document.body</b> property.</p>
+    </div>
+
+    <script>
+        document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+        document.getElementById("id02").innerHTML = document.getElementById("id01").nodeType;
+
+
+        document.getElementById("id04").innerHTML = document.getElementById("id03").firstChild.nodeValue;
+        document.getElementById("id04").innerHTML = document.getElementById("id03").nodeName;
+
+        document.getElementById("id06").innerHTML = document.getElementById("id05").childNodes[0].nodeValue;
+        alert(document.documentElement.innerHTML);
+        alert(document.body.innerHTML);
+
+    </script>
+</body>
+</html>
