@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HTML assignment</title>
+</head>
+<body>
+    <h1 id="hid1">this is fun</h1>
+    <h1 id="hid2">programming is fun</h1>
+    <h1 id="hid3">my name is prathyusha</h1>
+    <img id="hid4" src="https://th.bing.com/th/id/OIP.dUan89y1CAw6PpnJusdP8gHaEK?pid=Api&rs=1">
+    <button onclick="f1()">click to change id1</button>
+    <button onclick="f2()">click to change id2</button>
+    <button onclick="f3()">click to change id3</button>
+    <button onclick="f4()">click to change id4</button>
+
+
+    <script>
+        function f1() {
+            document.getElementById("hid1").innerHTML = "yes it is";
+            alert("text 1 is changed");
+
+        }
+        function f2() {
+            document.getElementById("hid2").innerHTML = "practice more";
+            alert("text 2 is changed");
+
+        }
+        function f3() {
+            document.getElementById("hid3").innerHTML = "surname is voleti";
+            alert("text 3 is changed");
+
+        }
+        function f4() {
+            document.getElementById("hid4").src = "https://www.idevice.ro/wp-content/uploads/2019/12/Google-Chrome-atentie-218x150.jpg";
+            alert("image is changed");
+
+        }
+    </script>
+</body>
+</html>

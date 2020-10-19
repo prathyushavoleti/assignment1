@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>event assignment</title>
+</head>
+<body>
+    <img src="https://www.idevice.ro/wp-content/uploads/2019/12/Google-Chrome-atentie-218x150.jpg" onload="loadImage()" width="100" height="120">
+
+    <p>Modify the text in the input field, then click outside the field to fire the onchange event.</p>
+
+    Enter some text: <input type="text" onchange="myFunction(this.value)">
+
+    Enter your name: <input type="text" onfocus="myFunc(this)">
+
+    <p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+
+    <h1 onunload="hello()" >Welcome to my Home Page</h1>
+
+    <p>Close this window or press F5 to reload the page.</p>
+    <p><strong>Note:</strong> Due to different browser settings, this event may not always work as expected.</p>
+
+    <script>
+        function loadImage() {
+            alert("Image is loaded");
+        }
+        function myFunction(val) {
+            alert("The input value has changed. The new value is: " + val);
+        }
+        function myFunc(x) {
+            x.style.background = "yellow";
+        }
+        function hello() {
+            alert("Thank you for visiting W3Schools!");
+        }
+    </script>
+
+
+
+
+</body>
+</html>
