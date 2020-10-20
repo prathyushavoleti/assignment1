@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>functions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").dblclick(function () {
+                $("[href]").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn2").dblclick(function () {
+                $("a[target='_blank']").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("a[target!='_blank']").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $(":button").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("tr:even").css("background-color", "yellow");
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("tr:odd").css("background-color", "blue");
+        });
+    </script>
+
+</head>
+<body>
+    <h1><a href="https://www.w3schools.com/html/">HTML Tutorial</a></h1>
+    <h2><a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial</a></h2>
+    <h3><a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial</a></h3>
+
+    <p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+
+    <button id="btn1">Click me</button>
+    <button id="btn2">Click me</button>
+
+
+    <button>Click me</button>
+    <table border="1">
+        <tr>
+            <th>name</th>
+            <th>id</th>
+        </tr>
+        <tr>
+            <td>sunitha</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>shradha</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>sowjanya</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+</body>
+</html>
