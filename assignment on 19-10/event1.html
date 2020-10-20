@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>events examples</title>
+</head>
+<body>
+    <!--ex-4,5,6,7-->
+    <script>
+        function extraevent(color) {
+            color.innerHTML = "this is crazy";
+        }
+        function extraevent1(color) {
+            color.innerHTML = "mouse over me";
+        }
+        function extraevent2(color) {
+            color.innerHTML = "mouse down";
+        }
+        function extraevent3(color) {
+            color.innerHTML = "mouse up";
+        }
+    </script>
+    <div onmouseover="extraevent(this)" onmouseout="extraevent1(this)" onmousedown="extraevent2(this)" onmouseup="extraevent3(this)"
+         style="background-color:cyan; width:80px;height:100px;padding:50px">
+      mouse events
+    </div>
+
+</body>
+</html>
