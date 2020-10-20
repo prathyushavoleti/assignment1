@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>json parse</title>
+</head>
+<body>
+    <h2>Create Object from JSON String</h2>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+        var info = '{"name":"prathyusha", "age":21, "city":"Visakhapatnam"}'
+        var x = JSON.parse(info);
+        document.getElementById("demo").innerHTML = x.name + "," + x.age + "," + x.city;
+    </script>
+
+    <script>
+        var y = JSON.parse('{"name":"ramya","age":21,"city":"Visakhapatnam"}');
+        document.getElementById("demo1").innerHTML = y.name + "," + y.age + "," + y.city;
+    </script>
+
+    <h2>Convert a string into a date object</h2>
+    <p id="demo2"></p>
+    <script>
+        var text = '{"name":"prathyu", "birth":"1999-06-23", "city":"Vizag"}';
+        var z = JSON.parse(text, function (key, value) {
+            if (key == "birth date") {
+                return new Date(value);
+            } else {
+                return value;
+            }
+        });
+        document.getElementById("demo2").innerHTML = z.name + ", " + z.birth;
+    </script>
+
+    <h2>Convert a string into a function.</h2>
+    <p id="demo3"></p>
+    <script>
+        var text = '{"name":"sravani", "age":"function() {return 21;}", "city":"Visakhapatnam"}';
+        var obj = JSON.parse(text);
+        obj.age = eval("(" + obj.age + ")");
+        document.getElementById("demo3").innerHTML = obj.name + ", " + obj.age();
+    </script>
+</body>
+</html>
