@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>remove attribute</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#div").remove();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#div1").empty();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div">
+        <p>This is a paragraph in the div.</p>
+    </div>
+    <button>remove the p element</button>
+    <div id="div1" style="background-color:aquamarine;width:80px;height:50px;border:solid">
+        <p id="pid">empty the text</p>
+    </div>
+    <button id="btn1">empty the p element</button>
+
+</body>
+</html>
