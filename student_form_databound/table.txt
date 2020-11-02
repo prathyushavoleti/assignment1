@@ -1,0 +1,11 @@
+CREATE TABLE studentdetails
+(
+	[stID] INT NULL, 
+    [stName] NVARCHAR(50) NULL, 
+    [stEmailID] NVARCHAR(50) NULL, 
+    [stMobileNum] BIGINT NULL, 
+    [stGender] NCHAR(10) NULL, 
+    [stCity] NVARCHAR(50) NULL, 
+    [stAddress] NVARCHAR(MAX) NULL, 
+    [stImg] NVARCHAR(50) NULL 
+)
