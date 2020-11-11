@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+    </div>
+    <div>
+        example1:string concatination<br />
+        @{
+            var ac = "voleti ";
+            var bc = "Amal Prathyusha";
+            var cc = ac + bc;
+            @cc
+
+        }<br /><br />
+
+        example2: singleline expression<br />
+        Todays date and time is - @DateTime.Now<br /><br />
+        Addition of 10 and 20 = @(10 + 20)<br />
+        subtraction of 10 and 20 = @(10 - 20)<br />
+        multiplication of 10 and 20 = @(10 * 20)<br />
+        Division of 20 and 20 = @(20 / 20)<br />
+    </div><br />
+
+    Example 3:
+          <div>
+
+              @*inorder to work with razor multiline expression the syntax is:*@
+              @{
+
+                  var name = "prathyusha";
+                  var course = "Electronics and Communication";
+                  var subjectlist = new List<string>() { "Analog communication", "Microprocessor and microcontroller", "STLD", "Television engineering", "Embedded systems" };
+
+
+              }
+
+              @name<br />
+              @course<br />
+
+              <b> the list of subjects are:</b> <br />
+
+              @foreach (var item in subjectlist)
+              {
+                  @item<br />
+
+              }
+
+
+          </div><br />
+
+    Example4:
+                <div>
+                    @{
+                        var numberlist = new List<int>
+                            () { 11, 20, 33, 45, 50, 68 };
+                    }
+                    @foreach (var items in numberlist)
+                    {
+                        if (items % 2 == 0)
+                        {
+                            <h4>the even number is: </h4> @items<br />
+                        }
+                        else if (items % 2 != 0)
+                        {
+                            <h4>the odd numbers is: </h4> @items<br />
+                        }
+                    }
+                </div>
+
+    @*<h1>Escape sequence in razor view engine</h1>
+    <div>
+        prathyusha.vol@gmail.com<br />
+        my email id is @@prathyusha.vol@gmail.com
+
+    @*</div>*@
+    @*<div>
+        @{
+            var variable = 3;
+            var is_true = true;
+        }
+
+        @if (variable == 1)
+        {
+            <h2>@variable is an even number</h2>
+            <h2>hello this is if block</h2>
+        }
+        else if (variable == 2)
+        {
+            <h2>@variable is an odd number</h2>
+        }
+        else
+        {
+            <h2>  this is else CodeBlockType</h2>
+        }
+        <div>
+            @(variable == 3 ? "number is equal to 3" : "number is not equal to 3")
+            @(is_true ? "number is true" : "number is not true")
+        </div>
+
+    </div>*@
+    <h2>loops in razor</h2>
+    <div>
+        the natural numbers are:<br />
+        @for (int i = 0; i <= 10; i++)
+        {
+
+            @i<br />
+        }
+
+    </div>
+
+</body>
+</html>
