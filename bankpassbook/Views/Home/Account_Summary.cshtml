@@ -1,0 +1,60 @@
+﻿@model BankPassbook.Models.accountSummary
+
+@{
+    ViewBag.Title = "Account_Summary";
+}
+
+<div style="border-bottom-style:solid;border-color:lightgrey">
+    <div style="font-family:Cambria;height:90px;margin-bottom:60px;font-size:70px"><img src="https://th.bing.com/th/id/OIP.ym1yevWqC9yA4tZ2Xvb6RgHaHa?w=203&h=203&c=7&o=5&dpr=1.5&pid=1.7" class="img-fluid" alt="Responsive image" style="height:100px;width:150px;margin-left:250px">Pecunia Bank</div>
+</div>
+<div style="margin-top:130px;margin-bottom:300px">
+    <h2 class="text-danger" style="text-align:center;font-family:Cambria;margin-left:350px;font-weight:bold;background-color:transparent;font-size:40px;width:500px;height:50px;align-content:center">Passbook information</h2>
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="text-align:center;margin-right:120px">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group text-danger" style="text-align:center;margin-left:320px;color:white;font-size:20px;font-family:Cambria">
+            @Html.LabelFor(model => model.accountNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.accountNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.accountNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group text-danger" style="text-align:center;margin-left:320px;color:white;font-size:20px;font-family:Cambria">
+            @Html.LabelFor(model => model.startDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.startDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.startDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group text-danger" style="text-align:center;margin-left:320px;color:white;font-size:20px;font-family:Cambria">
+            @Html.LabelFor(model => model.endDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.endDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.endDate, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group" style="text-align:center;font-family:Cambria;font-size:20px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Account Summary" name="btn" class="btn btn-info" style="text-align:center;font-family:Cambria;font-size:20px" />
+            </div>
+        </div>
+    </div>
+    }
+
+    @*<div>
+        @Html.ActionLink("Back to List", "Index")*@
+</div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

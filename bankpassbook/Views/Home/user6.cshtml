@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BankPassbook.Models.account>
+
+@{
+    ViewBag.Title = "user6";
+}
+
+<h2>user6</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acc_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_AccountHolder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amt_credited)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amt_debited)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acc_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_AccountHolder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amt_credited)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amt_debited)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.acc_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.acc_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.acc_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Bank_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accountdetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="accountNumber" Type="bigint" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Name_Accountholder" Type="nvarchar" MaxLength="50" />
+          <Property Name="amt_credited" Type="float" />
+          <Property Name="amt_debited" Type="float" />
+          <Property Name="bal_amt" Type="float" />
+        </EntityType>
+        <EntityType Name="accounts">
+          <Key>
+            <PropertyRef Name="acc_id" />
+          </Key>
+          <Property Name="acc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Acc_No" Type="bigint" Nullable="false" />
+          <Property Name="Name_AccountHolder" Type="nvarchar" MaxLength="50" />
+          <Property Name="amt_credited" Type="float" />
+          <Property Name="amt_debited" Type="float" />
+          <Property Name="Balance" Type="float" />
+        </EntityType>
+        <EntityType Name="accountSummary">
+          <Key>
+            <PropertyRef Name="accountNumber" />
+          </Key>
+          <Property Name="accountNumber" Type="bigint" Nullable="false" />
+          <Property Name="startDate" Type="date" />
+          <Property Name="endDate" Type="date" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Acc_No" Type="bigint" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="startDate" Type="date" />
+          <Property Name="endDate" Type="date" />
+        </EntityType>
+        <Association Name="FK_accountdetails_accountSummary">
+          <End Role="accountSummary" Type="Self.accountSummary" Multiplicity="0..1" />
+          <End Role="accountdetails" Type="Self.accountdetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountSummary">
+              <PropertyRef Name="accountNumber" />
+            </Principal>
+            <Dependent Role="accountdetails">
+              <PropertyRef Name="accountNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Bank_ManagementModelStoreContainer">
+          <EntitySet Name="accountdetails" EntityType="Self.accountdetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="accounts" EntityType="Self.accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="accountSummary" EntityType="Self.accountSummary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_accountdetails_accountSummary" Association="Self.FK_accountdetails_accountSummary">
+            <End Role="accountSummary" EntitySet="accountSummary" />
+            <End Role="accountdetails" EntitySet="accountdetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Bank_ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="accountdetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="accountNumber" Type="Int64" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Name_Accountholder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amt_credited" Type="Double" />
+          <Property Name="amt_debited" Type="Double" />
+          <Property Name="bal_amt" Type="Double" />
+          <NavigationProperty Name="accountSummary" Relationship="Self.FK_accountdetails_accountSummary" FromRole="accountdetails" ToRole="accountSummary" />
+        </EntityType>
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="acc_id" />
+          </Key>
+          <Property Name="acc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Acc_No" Type="Int64" Nullable="false" />
+          <Property Name="Name_AccountHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amt_credited" Type="Double" />
+          <Property Name="amt_debited" Type="Double" />
+          <Property Name="Balance" Type="Double" />
+        </EntityType>
+        <EntityType Name="accountSummary">
+          <Key>
+            <PropertyRef Name="accountNumber" />
+          </Key>
+          <Property Name="accountNumber" Type="Int64" Nullable="false" />
+          <Property Name="startDate" Type="DateTime" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="accountdetails" Relationship="Self.FK_accountdetails_accountSummary" FromRole="accountSummary" ToRole="accountdetails" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Acc_No" Type="Int64" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="startDate" Type="DateTime" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_accountdetails_accountSummary">
+          <End Role="accountSummary" Type="Self.accountSummary" Multiplicity="0..1" />
+          <End Role="accountdetails" Type="Self.accountdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accountSummary">
+              <PropertyRef Name="accountNumber" />
+            </Principal>
+            <Dependent Role="accountdetails">
+              <PropertyRef Name="accountNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Bank_ManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accountdetails" EntityType="Self.accountdetail" />
+          <EntitySet Name="accounts" EntityType="Self.account" />
+          <EntitySet Name="accountSummaries" EntityType="Self.accountSummary" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <AssociationSet Name="FK_accountdetails_accountSummary" Association="Self.FK_accountdetails_accountSummary">
+            <End Role="accountSummary" EntitySet="accountSummaries" />
+            <End Role="accountdetails" EntitySet="accountdetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Bank_ManagementModelStoreContainer" CdmEntityContainer="Bank_ManagementEntities">
+          <EntitySetMapping Name="accountdetails">
+            <EntityTypeMapping TypeName="Bank_ManagementModel.accountdetail">
+              <MappingFragment StoreEntitySet="accountdetails">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name_Accountholder" ColumnName="Name_Accountholder" />
+                <ScalarProperty Name="amt_credited" ColumnName="amt_credited" />
+                <ScalarProperty Name="amt_debited" ColumnName="amt_debited" />
+                <ScalarProperty Name="bal_amt" ColumnName="bal_amt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="accounts">
+            <EntityTypeMapping TypeName="Bank_ManagementModel.account">
+              <MappingFragment StoreEntitySet="accounts">
+                <ScalarProperty Name="acc_id" ColumnName="acc_id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+                <ScalarProperty Name="Name_AccountHolder" ColumnName="Name_AccountHolder" />
+                <ScalarProperty Name="amt_credited" ColumnName="amt_credited" />
+                <ScalarProperty Name="amt_debited" ColumnName="amt_debited" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="accountSummaries">
+            <EntityTypeMapping TypeName="Bank_ManagementModel.accountSummary">
+              <MappingFragment StoreEntitySet="accountSummary">
+                <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="Bank_ManagementModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
